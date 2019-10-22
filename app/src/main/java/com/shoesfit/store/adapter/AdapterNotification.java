@@ -90,9 +90,9 @@ public class AdapterNotification extends RecyclerView.Adapter<RecyclerView.ViewH
 
     // Replace the contents of a view (invoked by the layout manager)
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
+    public void onBindViewHolder(final RecyclerView.ViewHolder holder,  int position) {
         if (holder instanceof AdapterNotification.OriginalViewHolder) {
-            final Notification o = items.get(position);
+            final Notification o = items.get(holder.getAdapterPosition());
             AdapterNotification.OriginalViewHolder vItem = (AdapterNotification.OriginalViewHolder) holder;
             vItem.title.setText(o.title);
             vItem.content.setText(o.content);
@@ -106,7 +106,7 @@ public class AdapterNotification extends RecyclerView.Adapter<RecyclerView.ViewH
                 @Override
                 public void onClick(View view) {
                     if (mOnItemClickListener != null) {
-                        mOnItemClickListener.onItemClick(view, o, position);
+                        mOnItemClickListener.onItemClick(view, o, holder.getAdapterPosition());
                     }
                 }
             });

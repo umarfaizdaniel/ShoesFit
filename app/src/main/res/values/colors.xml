@@ -23,13 +23,13 @@
     <color name="colorRemoveCart">#666666</color>
 
     <color name="colorWarning">#FF7043</color>
-    <color name="colorInfo">#5DBA60</color>
+    <color name="colorInfo">#FC7B7C</color>
 
     <color name="darkOverlay">#80000000</color>
     <color name="darkOverlaySoft">#40000000</color>
     <color name="whiteOverlay">#40FFFFFF</color>
 
-    <color name="drawerHeaderColor">#FFED87</color>
+    <color name="drawerHeaderColor">#FC7B7B</color>
     <color name="drawerHeaderIcon">#666666</color>
 
 </resources>

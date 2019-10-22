@@ -94,9 +94,9 @@ public class AdapterProduct extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     // Replace the contents of a view (invoked by the layout manager)
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
+    public void onBindViewHolder(final RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof OriginalViewHolder) {
-            final Product p = items.get(position);
+            final Product p = items.get(holder.getAdapterPosition());
             OriginalViewHolder vItem = (OriginalViewHolder) holder;
             vItem.name.setText(p.name);
 
@@ -115,7 +115,7 @@ public class AdapterProduct extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 @Override
                 public void onClick(View view) {
                     if (mOnItemClickListener != null) {
-                        mOnItemClickListener.onItemClick(view, p, position);
+                        mOnItemClickListener.onItemClick(view, p, holder.getAdapterPosition());
                     }
                 }
             });

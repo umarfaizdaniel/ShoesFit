@@ -25,6 +25,7 @@ import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -93,11 +94,22 @@ public class ActivityProductDetails extends AppCompatActivity {
     private TextView tv_add_cart;
     private WebView webview = null;
     private SharedPref sharedPref;
+    private Button arbutton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_details);
+
+        arbutton = (Button) findViewById(R.id.button2);
+        arbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(ActivityProductDetails.this, ArActivity.class);
+                startActivity(intent);
+            }
+        });
 
         product_id = getIntent().getLongExtra(EXTRA_OBJECT_ID, -1L);
         from_notif = getIntent().getBooleanExtra(EXTRA_FROM_NOTIF, false);

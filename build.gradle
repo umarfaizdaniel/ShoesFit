@@ -19,6 +19,9 @@ buildscript {
 
 allprojects {
     repositories {
+        flatDir {
+            dirs 'D:\\Ufd Studio\\Augmented Reality\\UnityProject\\ArTest\\Export\\ArTest\\libs'
+        }
         jcenter()
         maven {
             url 'https://maven.google.com/'
